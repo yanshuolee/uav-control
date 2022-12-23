@@ -75,10 +75,8 @@ Copy ```./catkin_ws/tmp/display_trajectory/``` to your ```./catkin_ws/src``` and
 
 If no errors show up, everything is good to go.
 
-### Information
-wifi: RTF/rsl@0912 
-
-nx/000000
+### Mission Planner
+driver: [link](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads)
 
 ### Joystick setting
 F: Arm/Disarm (Can be used to shut down emergently) \
