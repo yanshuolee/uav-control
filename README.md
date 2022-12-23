@@ -62,7 +62,7 @@ Note that each command should be verified if it executes successfully.
     ```
     python main.py
     ```
-
+ 
 Note that you should see <span style="color:red">**"Guide"**</span> mode on Mission Planner. When the plane takes off, set (F) on and make the left stick center.
 
 
