@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="display_trajectory" type="pos2marker" name="pos2marker" output="screen"/>
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find display_trajectory)/model/display.rviz" />
+</launch>
