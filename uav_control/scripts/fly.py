@@ -32,11 +32,10 @@ def fly_to_subgoal(req):
     else:
         print("Heading to SG ({}, {}, {}, {})".format(req.x, req.y, req.z, req.yaw))
         # 1 Turn heading and go
-        '''
-        drone_ctr.goto_terminal(wp[0], wp[1], wp[2], wp[3])
-        '''
+        drone_ctr.goto_terminal(req.x, req.y, req.z, req.yaw)
+        
         # 2 Directly go
-        drone_ctr.goto_xyz_yaw(req.x, req.y, req.z, req.yaw)
+        #drone_ctr.goto_xyz_yaw(req.x, req.y, req.z, req.yaw)
         rospy.sleep(5)
         print("( {:5.2f} , {:5.2f} , {:5.2f} )".format(drone_ctr.pose.position.x, drone_ctr.pose.position.y, drone_ctr.pose.position.z - drone_ctr.org_alt))
 
@@ -44,7 +43,7 @@ def fly_to_subgoal(req):
     return CoordResponse("OK")
 
 def uav_flight_server():
-    rospy.init_node('flight_server')
+    #rospy.init_node('flight_server')
     s = rospy.Service('/flight_srv', Coord, fly_to_subgoal)
     print("Ready to fly.")
     rospy.spin()

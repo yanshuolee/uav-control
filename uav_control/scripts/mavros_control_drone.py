@@ -44,7 +44,7 @@ class MavController_drone:
         
         t = localtime( time() )
         self.time = "{}_{}_{}_{}_{}".format(t.tm_year, t.tm_mon, t.tm_mday, t.tm_hour, t.tm_min)
-        self.file_name = './result/' + self.time
+        self.file_name = '../result/' + self.time
         if not exists(self.file_name):
             mkdir(self.file_name)
         '''self.img_num = 1
@@ -97,7 +97,7 @@ class MavController_drone:
 
     def is_terminal(self, x, y, z, yaw):
         eular = tf.transformations.euler_from_quaternion((self.pose.orientation.x, self.pose.orientation.y, self.pose.orientation.z, self.pose.orientation.w))
-        #rospy.loginfo("( {:5.2f}, {:5.2f}, {:5.2f}, {:5.2f} ) | ( {:5.2f}, {:5.2f}, {:5.2f}, {:5.2f} )".format(x, y, z, yaw, self.pose.position.x, self.pose.position.y, self.pose.position.z, eular[2]))
+        rospy.loginfo("( {:5.2f}, {:5.2f}, {:5.2f}, {:5.2f} ) | ( {:5.2f}, {:5.2f}, {:5.2f}, {:5.2f} )".format(x, y, z, yaw, self.pose.position.x, self.pose.position.y, self.pose.position.z, eular[2]))
         return abs(x - self.pose.position.x) < self.pos_eps and \
                abs(y - self.pose.position.y) < self.pos_eps and \
                abs(z - self.pose.position.z) < self.pos_eps and \
@@ -140,9 +140,9 @@ class MavController_drone:
         self.goto_xyz_yaw(x, y, z, yaw)
         
         # Hover and Save image
-        rospy.sleep(8)
+        # rospy.sleep(8)
         #self.save_img()
-        #rospy.sleep(3)
+        rospy.sleep(3)
         rospy.loginfo('====================')
     
     def set_vel(self, vx, vy, vz, avx=0, avy=0, avz=0):
