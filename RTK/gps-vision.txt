@@ -1,0 +1,20 @@
+GPS->Vision
+Param: src1
+Change all to 6(ExternalNav)
+
+Param: viso_type
+Set to 1
+
+Param: arming_check
+selective as arm.png
+
+===================================
+Vision->GPS
+Param: src1
+Change all 6 to 31331
+
+Param: viso_type
+1->0
+
+Param: arming_check
+Click All
