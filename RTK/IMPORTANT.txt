@@ -1,1 +1,21 @@
-調速度
+[Todo]
+1. 調速度
+
+[Notes]
+1. direction
+          N(+y)
+          |
+W(-x) --- O --- E(+x)
+          |
+          S(-y)
+
+2. 初始設定
+  1) sik radio -> 載入設定 -> 網路ID = 25
+  2) RTK/GPS -> com 7 (115200) -> Reset
+
+3.
+(x, y) 靠GPS
+yaw 靠電子羅盤
+兩者皆須校正
+
+loiter -> 定住
